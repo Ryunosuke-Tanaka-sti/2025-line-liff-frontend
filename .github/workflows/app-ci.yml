@@ -12,6 +12,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    environment: deploy
+    env:
+      NEXT_PUBLIC_PROMPT_BATTLE_LIFF_ID: ${{ secrets.NEXT_PUBLIC_PROMPT_BATTLE_LIFF_ID }}
     steps:
       - uses: actions/checkout@v4
 
