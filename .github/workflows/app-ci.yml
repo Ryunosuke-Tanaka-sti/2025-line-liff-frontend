@@ -1,0 +1,58 @@
+on:
+  # push:
+  #   branches: ["main"]
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: "22.x" # set this to the node version to use
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+          cache-dependency-path: next-app/package-lock.json
+
+      - name: npm install, build, and test
+        run: |
+          npm install
+          npm run build
+        working-directory: next-app
+
+      - name: Upload Cache app
+        uses: actions/cache/save@v4
+        with:
+          path: next-app/out/
+          key: ${{ runner.os }}-app-${{ github.sha }}
+
+  deploy:
+    runs-on: ubuntu-24.04
+    needs: build
+    environment: deploy
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download Cache app
+        uses: actions/cache/restore@v4
+        with:
+          path: next-app/out/
+          key: ${{ runner.os }}-app-${{ github.sha }}
+
+      - name: Build And Deploy
+        uses: Azure/static-web-apps-deploy@1a947af9992250f3bc2e68ad0754c0b0c11566c9
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: "upload"
+          output_location: "next-app/out/"
+          app_location: "next-app/out/"
+          skip_app_build: true
