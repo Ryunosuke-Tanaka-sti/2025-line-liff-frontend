@@ -16,11 +16,11 @@ export const ErrorBoundaryComponent = (props: Props) => {
 const ErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => {
   console.error(error);
   return (
-    <>
+    <main className=" flex size-full min-h-screen items-center justify-center  gap-5 ">
       <button className="bg-slate-300" onClick={resetErrorBoundary}>
         リトライ
         {error.message}
       </button>
-    </>
+    </main>
   );
 };

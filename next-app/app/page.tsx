@@ -2,9 +2,8 @@ import { LoadingMainComponent } from "@/components/LoadingMainComponent";
 
 export default function Home() {
   return (
-    <div className="">
+    <section id="main" className="flex flex-col items-center">
       <LoadingMainComponent />
-      <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6"></footer>
-    </div>
+    </section>
   );
 }

@@ -17,7 +17,7 @@ export const FooterComponent = () => {
         <li className="flex flex-row items-center gap-2">
           <FaMicroblog className="size-7" />
           <a href="https://tech-lab.sios.jp/">
-            <img src="/bloglogo.svg" className="h-7 w-auto" alt="" />
+            <img src="/assets/bloglogo.svg" className="h-7 w-auto" alt="" />
           </a>
         </li>
       </ul>
