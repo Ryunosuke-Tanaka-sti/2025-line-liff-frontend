@@ -2,13 +2,13 @@
     "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
     "configurations": {
         "app": {
-            "appLocation": "next-app",
-            "appDevserverUrl": "http://localhost:3000",
+            "appLocation": "./",
+            "appDevserverUrl": "http://localhost:3001",
             "apiDevserverUrl": "http://nest:3000",
             "run": "npm run dev",
             "port": 5000,
             "open": true,
-            "swaConfigLocation": ".env/local"
+            "swaConfigLocation": "dev/local"
         }
     }
 }
