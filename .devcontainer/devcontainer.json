@@ -20,7 +20,8 @@
         "vscode-icons-team.vscode-icons",
         "MariusAlchimavicius.json-to-ts",
         "wix.vscode-import-cost",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "github.vscode-github-actions"
       ],
       "settings": {
         "files.encoding": "utf8",
