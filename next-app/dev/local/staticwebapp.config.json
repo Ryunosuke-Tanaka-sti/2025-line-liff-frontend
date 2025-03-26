@@ -2,7 +2,7 @@
     "trailingSlash": "always",
     "routes": [
         {
-            "route": "/",
+            "route": "/community/*",
             "allowedRoles": [
                 "authenticated"
             ]

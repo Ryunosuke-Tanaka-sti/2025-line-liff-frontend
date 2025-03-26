@@ -1,7 +1,7 @@
 {
   "name": "procject-dev",
   "dockerComposeFile": [
-    "../docker-compose.yml"
+    "../compose.yml"
   ],
   "service": "next",
   "workspaceFolder": "/home/node/app",
