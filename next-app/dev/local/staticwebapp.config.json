@@ -1,21 +1,19 @@
 {
-    "trailingSlash": "always",
-    "routes": [
-        {
-            "route": "/community/*",
-            "allowedRoles": [
-                "authenticated"
-            ]
-        }
-    ],
-    "responseOverrides": {
-        "404": {
-            "rewrite": "/404/index.html",
-            "statusCode": 404
-        },
-        "401": {
-            "statusCode": 302,
-            "redirect": "/.auth/login/google?post_login_redirect_uri=/community/roulette"
-        }
+  "trailingSlash": "always",
+  "routes": [
+    {
+      "route": "/community/*",
+      "allowedRoles": ["authenticated"]
     }
+  ],
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/404/index.html",
+      "statusCode": 404
+    },
+    "401": {
+      "statusCode": 302,
+      "redirect": "/.auth/login/google?post_login_redirect_uri=/community/roulette"
+    }
+  }
 }

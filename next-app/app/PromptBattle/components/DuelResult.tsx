@@ -1,4 +1,4 @@
-import { CombatLogType } from "@/service/Battle/type";
+import { CombatLogType } from "@/service/battle/type";
 
 type CombatResultProps = {
   data: CombatLogType;

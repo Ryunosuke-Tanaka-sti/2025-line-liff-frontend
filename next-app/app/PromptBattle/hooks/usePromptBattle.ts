@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import useSWRMutation from "swr/mutation";
 
-import { fetchEnemy, postPromptBattle } from "@/service/Battle/api";
+import { fetchEnemy, postPromptBattle } from "@/service/battle/api";
 
 export const usePromptBattle = () => {
   const {

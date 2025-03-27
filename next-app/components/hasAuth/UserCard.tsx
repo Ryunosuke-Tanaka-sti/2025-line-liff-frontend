@@ -31,14 +31,14 @@ export const UserCard = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div className="flex min-w-52 flex-row items-center justify-end gap-4 px-2 py-4 font-noto">
+    <div className="flex min-w-52 cursor-default flex-row items-center justify-end gap-4 px-2 py-4 font-noto">
       {user && (
         <>
           <span className="text-xs"> {user.userName}でログイン中</span>
           <img
             src={user.picture}
             alt=""
-            className="size-12 rounded-full border-2 border-gray-500"
+            className="size-12 rounded-full border-2 border-gray-500/40"
           />
         </>
       )}

@@ -1,6 +1,6 @@
 import useSWR from "swr";
 
-import { fetchReadUser } from "@/service/User/api";
+import { fetchReadUser } from "@/service/user/api";
 
 export const useUser = () => {
   const {
