@@ -12,6 +12,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily:{
+        noto: ["Noto Sans JP", "sans-serif"],
+      },
       animation: {
         "text-focus-in": "text-focus-in 2s infinite   both",
       },

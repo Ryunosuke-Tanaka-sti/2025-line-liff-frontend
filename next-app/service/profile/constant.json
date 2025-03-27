@@ -1,0 +1,69 @@
+{
+    "clientPrincipal": {
+      "identityProvider": "google",
+      "userId": "100817931077886088221",
+      "userDetails": "ry-tanaka@sios.com",
+      "userRoles": [
+        "authenticated",
+        "anonymous"
+      ],
+      "claims": [
+        {
+          "typ": "iss",
+          "val": "https://accounts.google.com"
+        },
+        {
+          "typ": "azp",
+          "val": "95686017059-1noopouj9juo084bfn44sij0hc878500.apps.googleusercontent.com"
+        },
+        {
+          "typ": "aud",
+          "val": "95686017059-1noopouj9juo084bfn44sij0hc878500.apps.googleusercontent.com"
+        },
+        {
+          "typ": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier",
+          "val": "100817931077886088221"
+        },
+        {
+          "typ": "hd",
+          "val": "sios.com"
+        },
+        {
+          "typ": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress",
+          "val": "ry-tanaka@sios.com"
+        },
+        {
+          "typ": "email_verified",
+          "val": "true"
+        },
+        {
+          "typ": "at_hash",
+          "val": "3AYpuLE3SesB7HoZRyqcbw"
+        },
+        {
+          "typ": "name",
+          "val": "Ryu"
+        },
+        {
+          "typ": "picture",
+          "val": "https://lh3.googleusercontent.com/a/ACg8ocI2SFmJc65pD-Qbxnetk5Woei7GRUwP3vL3rc1TWHJNsZQHw5I=s96-c"
+        },
+        {
+          "typ": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname",
+          "val": "Ryu"
+        },
+        {
+          "typ": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname",
+          "val": "D"
+        },
+        {
+          "typ": "iat",
+          "val": "1735360466"
+        },
+        {
+          "typ": "exp",
+          "val": "1735364066"
+        }
+      ]
+    }
+  }
