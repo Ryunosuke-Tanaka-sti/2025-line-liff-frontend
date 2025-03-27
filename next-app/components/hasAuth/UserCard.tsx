@@ -27,7 +27,7 @@ export const UserCard = () => {
     fetchUserProfile();
   }, []);
 
-  if (loading) return <p>読み込み中...</p>;
+  if (loading) return <></>;
   if (error) return <p>{error}</p>;
 
   return (
