@@ -27,11 +27,11 @@ export const UserCard = () => {
     fetchUserProfile();
   }, []);
 
-  if (loading) return <></>;
+  if (loading) return <div className="min-w-12 px-2" />;
   if (error) return <p>{error}</p>;
 
   return (
-    <div className="flex min-w-52 cursor-default flex-row items-center justify-end gap-4 px-2 py-4 font-noto">
+    <div className="flex min-w-12 cursor-default flex-row items-center justify-end gap-4 px-2 py-4 font-noto">
       {user && (
         <>
           <span className="text-xs"> {user.userName}でログイン中</span>

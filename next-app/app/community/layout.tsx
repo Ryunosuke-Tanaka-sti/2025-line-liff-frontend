@@ -8,7 +8,7 @@ export default function layout({
   return (
     <>
       <HeaderComponent />
-      <main className="min-h-96 w-full font-noto">{children};</main>
+      <main className="min-h-screen w-full font-noto">{children}</main>
     </>
   );
 }

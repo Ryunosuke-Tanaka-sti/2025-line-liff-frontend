@@ -13,7 +13,7 @@
     },
     "401": {
       "statusCode": 302,
-      "redirect": "/.auth/login/google?post_login_redirect_uri=/community/roulette"
+      "redirect": "/.auth/login/google?post_login_redirect_uri=/community"
     }
   }
 }
