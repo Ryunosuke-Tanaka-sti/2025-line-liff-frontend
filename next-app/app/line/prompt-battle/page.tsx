@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 import { LoadingMainComponent } from "@/components/LoadingMainComponent";
 import { PromptFormType } from "@/types/PromptType";
 
-import { CombatResult } from "../PromptBattle/components/DuelResult";
-import { PromptForm } from "../PromptBattle/components/PromptForm";
-import { usePromptBattle } from "../PromptBattle/hooks/usePromptBattle";
-import { useUser } from "../PromptBattle/hooks/useUser";
+import { CombatResult } from "./components/DuelResult";
+import { PromptForm } from "./components/PromptForm";
+import { usePromptBattle } from "./hooks/usePromptBattle";
+import { useUser } from "./hooks/useUser";
 
 export default function PromptBattle() {
   const {
