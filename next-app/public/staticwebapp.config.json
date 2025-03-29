@@ -1,6 +1,7 @@
 {
   "trailingSlash": "always",
   "auth": {
+    "rolesSource": "/api",
     "identityProviders": {
       "google": {
         "registration": {
