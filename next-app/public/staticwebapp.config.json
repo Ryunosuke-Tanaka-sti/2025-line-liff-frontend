@@ -7,12 +7,7 @@
         "registration": {
           "clientIdSettingName": "GOOGLE_CLIENT_ID",
           "clientSecretSettingName": "GOOGLE_PROVIDER_AUTHENTICATION_SECRET"
-        },
-        "scopes": [
-          "openid",
-          "profile",
-          "https://www.googleapis.com/auth/script.external_request"
-        ]
+        }
       }
     }
   },
