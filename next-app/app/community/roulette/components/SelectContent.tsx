@@ -35,16 +35,6 @@ export const SelectContent = ({ stringArray }: SelectContentProps) => {
     }
   };
 
-  const onClick = async () => {
-    const res = await fetch("/api/auth", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await res.json();
-    console.log(data);
-  };
   return (
     <>
       <div className="w-full max-w-2xl rounded-xl bg-white/10 p-8 shadow-2xl backdrop-blur-lg">
@@ -96,12 +86,6 @@ export const SelectContent = ({ stringArray }: SelectContentProps) => {
             リセット
           </button>
         </div>
-        <a
-          onClick={onClick}
-          className="flex items-center justify-center rounded-lg bg-white px-8 py-2 shadow transition-all hover:-translate-x-1 hover:-translate-y-1 hover:shadow-md"
-        >
-          認証情報を取得
-        </a>
       </div>
     </>
   );
