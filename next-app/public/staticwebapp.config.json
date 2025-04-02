@@ -14,7 +14,15 @@
   "routes": [
     {
       "route": "/community/*",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": [
+        "authenticated"
+      ]
+    },
+    {
+      "route": "/google/*",
+      "allowedRoles": [
+        "admin"
+      ]
     }
   ],
   "responseOverrides": {

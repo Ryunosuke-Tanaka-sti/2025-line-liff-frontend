@@ -10,6 +10,6 @@ export const fetchReadUser = async () => {
     await sleep(2000);
     return dummyFetchUser;
   }
-  const res = await axiosClient.get<UserType>("/api/user");
+  const res = await axiosClient.get<UserType>("/api/prompt-battle/user");
   return res.data;
 };

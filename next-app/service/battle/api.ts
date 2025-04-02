@@ -23,6 +23,8 @@ export const fetchEnemy = async () => {
     await sleep(2000);
     return dummyFetchEnemyResponse;
   }
-  const response = await axiosClient.get<EnemyType>("/api/battle");
+  const response = await axiosClient.get<EnemyType>(
+    "/api/prompt-battle/battle"
+  );
   return response.data;
 };
