@@ -19,7 +19,7 @@ export const usePromptBattle = () => {
     data: combatResult,
     trigger: trigger,
     isMutating: isMutatingCombat,
-  } = useSWRMutation("/api/battle", postPromptBattle);
+  } = useSWRMutation("/api/line/battle", postPromptBattle);
 
   return {
     enemyData,
