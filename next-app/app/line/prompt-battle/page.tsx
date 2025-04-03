@@ -19,6 +19,12 @@ export default function PromptBattle() {
     const tmp = res.data;
     setData(tmp);
   };
+
+  const onClickNext = async () => {
+    const res = await axiosClient.get<EnemyType>("/api/line/battle");
+    const tmp = res.data;
+    setData(tmp);
+  }
   // const {
   //   enemyData,
   //   isLoadingEnemy,
@@ -66,7 +72,13 @@ export default function PromptBattle() {
   return (
     <>
       <main className=" flex w-full flex-col items-center gap-10 pb-10">
-        <button onClick={onClick}>deta 取得</button>
+        <button onClick={onClick}
+          className="flex w-full items-center justify-center rounded bg-slate-200 py-4 text-2xl font-bold">
+          deta 取得
+        </button>
+        <button onClick={onClickNext} className="flex w-full items-center justify-center rounded bg-slate-200 py-4 text-2xl font-bold">
+          next 取得
+        </button>
         <pre>{JSON.stringify(data)}</pre>
         {/* <div className="flex w-full flex-col items-center gap-3 px-2 py-6">
           <span className="text-2xl font-bold">
