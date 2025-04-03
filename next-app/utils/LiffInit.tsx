@@ -38,7 +38,12 @@ export const LiffInitPromptBattle = (props: Props) => {
   if (!isInLineClient) {
     return <NotLineClientPage />;
   }
-  return <>{children}</>;
+  return (
+    <>
+      {liff.isLoggedIn() ?? <>test</>}
+      {children}
+    </>
+  );
 };
 
 export const LiffInitGeoCharacter = (props: Props) => {
