@@ -8,7 +8,6 @@ import { PromptFormType } from "@/types/PromptType";
 import { CombatResult } from "./components/DuelResult";
 import { PromptForm } from "./components/PromptForm";
 import { usePromptBattle } from "./hooks/usePromptBattle";
-import { useUser } from "./hooks/useUser";
 
 export default function PromptBattle() {
   const {
@@ -21,7 +20,7 @@ export default function PromptBattle() {
     trigger,
   } = usePromptBattle();
 
-  const { userData, isLoadingUser, mutateUser } = useUser();
+  // const { userData, isLoadingUser, mutateUser } = useUser();
 
   const [isDuel, setDuel] = useState(false);
 
@@ -41,7 +40,7 @@ export default function PromptBattle() {
 
   const onClickSubmitNextBattle = async () => {
     await mutateEnemy();
-    await mutateUser();
+    // await mutateUser();
     setDuel(false);
   };
   useEffect(() => {
@@ -53,7 +52,7 @@ export default function PromptBattle() {
 
   if (isMutatingCombat) return <LoadingMainComponent />;
   if (isLoadingEnemy || !enemyData) return <LoadingMainComponent />;
-  if (isLoadingUser || !userData) return <LoadingMainComponent />;
+  // if (isLoadingUser || !userData) return <LoadingMainComponent />;
 
   return (
     <>
@@ -90,7 +89,7 @@ export default function PromptBattle() {
           )}
         </div>
 
-        <div className="flex w-full flex-col items-center gap-3 p-6">
+        {/* <div className="flex w-full flex-col items-center gap-3 p-6">
           <div className="flex w-full flex-row justify-between text-5xl font-bold">
             <span className="text-red-500">{userData.winCount}勝</span>
             <span className="text-blue-500">{userData.lossCount}敗</span>
@@ -98,7 +97,7 @@ export default function PromptBattle() {
           <div className="flex w-full flex-row justify-center text-2xl font-bold">
             <span>{userData.hotStreak}連勝中！</span>
           </div>
-        </div>
+        </div> */}
       </main>
     </>
   );

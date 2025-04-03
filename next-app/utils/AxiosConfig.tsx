@@ -13,8 +13,7 @@ type Props = {
 };
 
 export const AxiosConfig = (props: Props) => {
-  // const { children } = props;
-  console.log(props)
+  const { children } = props;
 
   const { showBoundary } = useErrorBoundary();
   const [isTokenSet, setIsTokenSet] = useState<boolean>(false);
@@ -52,5 +51,5 @@ export const AxiosConfig = (props: Props) => {
   }, [accessToken, showBoundary]);
 
   if (!isTokenSet) return <LoadingMainComponent />;
-  return <>{accessToken}</>;
+  return <>{children}</>;
 };
