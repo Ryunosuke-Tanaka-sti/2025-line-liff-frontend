@@ -1,63 +1,73 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-import { LoadingMainComponent } from "@/components/LoadingMainComponent";
-import { PromptFormType } from "@/types/PromptType";
+import { fetchEnemy } from "@/service/battle/api";
+import { EnemyType } from "@/types/PromptType";
 
-import { CombatResult } from "./components/DuelResult";
-import { PromptForm } from "./components/PromptForm";
-import { usePromptBattle } from "./hooks/usePromptBattle";
+
+
 
 export default function PromptBattle() {
-  const {
-    enemyData,
-    isLoadingEnemy,
-    mutateEnemy,
-    isValidating,
-    combatResult,
-    isMutatingCombat,
-    trigger,
-  } = usePromptBattle();
+  const [data, setData] = useState<EnemyType>({
+    enemyID: "",
+    name: "",
+    imageUrl: ""
+  });
+  const onClick = async () => {
+    const tmp = await fetchEnemy();
+    setData(tmp);
+  };
+  // const {
+  //   enemyData,
+  //   isLoadingEnemy,
+  //   mutateEnemy,
+  //   isValidating,
+  //   combatResult,
+  //   isMutatingCombat,
+  //   trigger,
+  // } = usePromptBattle();
 
   // const { userData, isLoadingUser, mutateUser } = useUser();
 
-  const [isDuel, setDuel] = useState(false);
+  // const [isDuel, setDuel] = useState(false);
 
-  const submitPrompt = async (formData: PromptFormType) => {
-    if (!enemyData) {
-      await mutateEnemy();
-      return;
-    }
-    console.log("submit", formData);
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-    await trigger({ ...formData, enemyID: enemyData.enemyID });
-    setDuel((prev) => !prev);
-  };
+  // const submitPrompt = async (formData: PromptFormType) => {
+  //   if (!enemyData) {
+  //     await mutateEnemy();
+  //     return;
+  //   }
+  //   console.log("submit", formData);
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: "smooth",
+  //   });
+  //   await trigger({ ...formData, enemyID: enemyData.enemyID });
+  //   setDuel((prev) => !prev);
+  // };
 
-  const onClickSubmitNextBattle = async () => {
-    await mutateEnemy();
-    // await mutateUser();
-    setDuel(false);
-  };
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, [isDuel]);
+  // const onClickSubmitNextBattle = async () => {
+  //   await mutateEnemy();
+  //   await mutateUser();
+  //   setDuel(false);
+  // };
+  // useEffect(() => {
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: "smooth",
+  //   });
+  // }, [isDuel]);
 
-  if (isMutatingCombat) return <LoadingMainComponent />;
-  if (isLoadingEnemy || !enemyData) return <LoadingMainComponent />;
+  // if (isMutatingCombat) return <LoadingMainComponent />;
+  // if (isLoadingEnemy || !enemyData) return <LoadingMainComponent />;
   // if (isLoadingUser || !userData) return <LoadingMainComponent />;
 
   return (
     <>
       <main className=" flex w-full flex-col items-center gap-10 pb-10">
-        <div className="flex w-full flex-col items-center gap-3 px-2 py-6">
+        <button onClick={onClick}>deta 取得</button>
+        <pre>{JSON.stringify(data)}</pre>
+        {/* <div className="flex w-full flex-col items-center gap-3 px-2 py-6">
           <span className="text-2xl font-bold">
             対戦チャンピオン
             <span />
@@ -89,7 +99,7 @@ export default function PromptBattle() {
           )}
         </div>
 
-        {/* <div className="flex w-full flex-col items-center gap-3 p-6">
+        <div className="flex w-full flex-col items-center gap-3 p-6">
           <div className="flex w-full flex-row justify-between text-5xl font-bold">
             <span className="text-red-500">{userData.winCount}勝</span>
             <span className="text-blue-500">{userData.lossCount}敗</span>
