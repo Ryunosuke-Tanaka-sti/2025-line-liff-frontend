@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { fetchEnemy } from "@/service/battle/api";
+import { axiosClient } from "@/service/axiosClient";
 import { EnemyType } from "@/types/PromptType";
 
 
@@ -15,7 +15,8 @@ export default function PromptBattle() {
     imageUrl: ""
   });
   const onClick = async () => {
-    const tmp = await fetchEnemy();
+    const res = await axiosClient.get<EnemyType>("/api/line/battle-test");
+    const tmp = res.data;
     setData(tmp);
   };
   // const {
