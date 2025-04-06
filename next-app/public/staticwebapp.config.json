@@ -13,15 +13,15 @@
   },
   "routes": [
     {
-      "route": "/community/*",
-      "allowedRoles": [
-        "authenticated"
-      ]
-    },
-    {
       "route": "/community/google/*",
       "allowedRoles": [
         "admin"
+      ]
+    },
+    {
+      "route": "/community/*",
+      "allowedRoles": [
+        "authenticated"
       ]
     }
   ],
