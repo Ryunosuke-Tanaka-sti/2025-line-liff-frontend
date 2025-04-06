@@ -1,4 +1,4 @@
-import { AxiosConfig } from "@/utils/AxiosConfig";
+import { AxiosLiffConfig } from "@/utils/AxiosLiffConfig";
 import { ErrorBoundaryComponent } from "@/utils/ErrorBoundary";
 import { LiffInitPromptBattle } from "@/utils/LiffInit";
 import { SWRConfigComponent } from "@/utils/SWRConfigComponent";
@@ -16,11 +16,11 @@ export default function Layout({
       <HeaderComponent />
       <ErrorBoundaryComponent>
         <LiffInitPromptBattle>
-          <AxiosConfig>
+          <AxiosLiffConfig>
             <SWRConfigComponent>
               {children}
             </SWRConfigComponent>
-          </AxiosConfig>
+          </AxiosLiffConfig>
         </LiffInitPromptBattle>
       </ErrorBoundaryComponent>
       <FooterComponent />

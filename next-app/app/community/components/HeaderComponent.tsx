@@ -1,6 +1,7 @@
 export const HeaderComponent = () => {
   return (
     <header className="flex h-16 flex-row items-center justify-between gap-2 border-b-2 border-gray-500/20 p-2">
+      {/* logo */}
       <a href="/community">
         <img
           src="/assets/community/logo.svg"
@@ -8,6 +9,8 @@ export const HeaderComponent = () => {
           alt=""
         />
       </a>
+
+      {/* menu */}
       <div className="flex flex-row items-center justify-end gap-4 px-2">
         <div className="hidden flex-row gap-2 md:flex">
           <a

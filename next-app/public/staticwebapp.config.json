@@ -19,7 +19,7 @@
       ]
     },
     {
-      "route": "/google/*",
+      "route": "/community/google/*",
       "allowedRoles": [
         "admin"
       ]

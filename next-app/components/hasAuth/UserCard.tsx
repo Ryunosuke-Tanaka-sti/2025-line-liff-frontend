@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { fetchProfile } from "@/service/profile/api"; // API関数をインポート
+import { fetchProfile } from "@/service/auth/profile/api"; // API関数をインポート
 
 import type { UserProfileType } from "@/types/UserProfile";
 

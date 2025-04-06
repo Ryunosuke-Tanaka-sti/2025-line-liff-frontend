@@ -1,3 +1,5 @@
+import { AdminMenu } from "@/components/hasAuth/AdminMenu";
+
 export default function ComunityPage() {
   return (
     <main className="flex w-full flex-col gap-2">
@@ -8,6 +10,7 @@ export default function ComunityPage() {
         >
           話題を決めるルーレット
         </a>
+        <AdminMenu />
       </div>
     </main>
   );

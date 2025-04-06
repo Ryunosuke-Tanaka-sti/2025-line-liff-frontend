@@ -12,7 +12,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-export const AxiosConfig = (props: Props) => {
+export const AxiosLiffConfig = (props: Props) => {
   const { children } = props;
 
   const { showBoundary } = useErrorBoundary();
