@@ -14,14 +14,14 @@ export const SidebarContent = (props: SidebarContentProps) => {
 
 
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+    const [selectedCategory, setSelectedCategory] = useState<string>(contents[0].category);
 
     const toggleSidebar = () => {
         setIsOpen(!isOpen);
     };
 
     const handleCategoryClick = (category: string) => {
-        setSelectedCategory(category === selectedCategory ? null : category);
+        setSelectedCategory(category);
         onClickCategory(category);
     };
 
@@ -41,7 +41,7 @@ export const SidebarContent = (props: SidebarContentProps) => {
 
     return (<>
         <div
-            className={`absolute left-0 h-full overflow-x-hidden bg-white shadow-lg transition-all duration-300 ease-in-out ${isOpen ? 'w-64' : 'w-16'}`}
+            className={`absolute left-0 hidden h-full overflow-x-hidden bg-white shadow-lg transition-all duration-300 ease-in-out md:block   ${isOpen ? 'w-64' : 'w-16'}`}
             onClick={toggleSidebar}
             ref={ref}
         >
@@ -92,6 +92,25 @@ export const SidebarContent = (props: SidebarContentProps) => {
                         ))}
                     </div>
                 )}
+            </div>
+        </div>
+
+        {/* カテゴリ選択ボタン */}
+        <div className="mt-8 w-full max-w-2xl rounded-xl bg-white/10 p-6 shadow-lg backdrop-blur-lg md:hidden">
+            <h2 className="mb-3 text-xl font-semibold text-white">カテゴリ選択</h2>
+            <div className="grid grid-cols-2 gap-2">
+                {contents.map((item) => (
+                    <button
+                        key={item.category}
+                        onClick={() => handleCategoryClick(item.category)}
+                        className={`rounded-lg p-2 text-center text-white 
+                                    ${selectedCategory === item.category
+                                ? '  bg-indigo-500 text-white'
+                                : ' bg-white/20 text-gray-700 hover:bg-gray-100'}
+                        `}>
+                        {item.category}
+                    </button>
+                ))}
             </div>
         </div>
     </>

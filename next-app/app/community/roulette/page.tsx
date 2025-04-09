@@ -132,7 +132,6 @@ const RandomStringSelector: React.FC = () => {
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-indigo-900 to-purple-800 p-6">
       <SelectContent stringArray={selectedCategoryContents} />
-
       {/* Optional: Show the complete list of strings */}
       <div className="mt-8 w-full max-w-2xl rounded-xl bg-white/10 p-6 shadow-lg backdrop-blur-lg">
         <h2 className="mb-4 text-xl font-bold text-white">選択可能な話題</h2>
