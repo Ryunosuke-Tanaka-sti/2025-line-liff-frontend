@@ -50,17 +50,20 @@ export const SidebarContent = (props: SidebarContentProps) => {
             <div className="h-full overflow-y-auto px-4 py-6">
                 {isOpen ? (
                     // Expanded sidebar content
-                    <div className="space-y-6">
-                        <h2 className="mb-4 whitespace-nowrap text-xl font-bold text-gray-800">カテゴリー</h2>
+                    <div className="flex flex-col items-start gap-6">
+                        <h2 className="flex flex-row items-center gap-2 whitespace-nowrap text-xl font-bold text-gray-800">
+                            <svg className="m-auto size-8" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g id="Layer_2" data-name="Layer 2"><path d="m4 9h24a3 3 0 0 0 0-6h-24a3 3 0 0 0 0 6zm0-4h24a1 1 0 0 1 0 2h-24a1 1 0 0 1 0-2z" /><path d="m28 13h-24a3 3 0 0 0 0 6h24a3 3 0 0 0 0-6zm0 4h-24a1 1 0 0 1 0-2h24a1 1 0 0 1 0 2z" /><path d="m28 23h-24a3 3 0 0 0 0 6h24a3 3 0 0 0 0-6zm0 4h-24a1 1 0 0 1 0-2h24a1 1 0 0 1 0 2z" /></g></svg>
+                            カテゴリー
+                        </h2>
 
                         {contents.map((item) => (
-                            <div key={item.category} className="mb-4">
+                            <div key={item.category} className="">
                                 <button
                                     onClick={(event) => {
                                         event.stopPropagation();
                                         handleCategoryClick(item.category)
                                     }}
-                                    className={`w-full whitespace-nowrap rounded-md px-3 py-2 text-left font-medium transition-colors 
+                                    className={`w-full whitespace-nowrap rounded-md px-3 py-2 text-left text-base font-medium transition-colors 
                                         ${selectedCategory === item.category
                                             ? 'bg-indigo-500 text-white'
                                             : 'text-gray-700 hover:bg-gray-100'}
@@ -73,7 +76,10 @@ export const SidebarContent = (props: SidebarContentProps) => {
                     </div>
                 ) : (
                     // Collapsed sidebar content (ribbon)
-                    <div className="flex flex-col items-center space-y-6">
+                    <div className="flex flex-col items-center gap-6">
+                        <h2 className="flex flex-row items-center gap-2 whitespace-nowrap text-xl font-bold text-gray-800">
+                            <svg className="m-auto size-8" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g id="Layer_2" data-name="Layer 2"><path d="m4 9h24a3 3 0 0 0 0-6h-24a3 3 0 0 0 0 6zm0-4h24a1 1 0 0 1 0 2h-24a1 1 0 0 1 0-2z" /><path d="m28 13h-24a3 3 0 0 0 0 6h24a3 3 0 0 0 0-6zm0 4h-24a1 1 0 0 1 0-2h24a1 1 0 0 1 0 2z" /><path d="m28 23h-24a3 3 0 0 0 0 6h24a3 3 0 0 0 0-6zm0 4h-24a1 1 0 0 1 0-2h24a1 1 0 0 1 0 2z" /></g></svg>
+                        </h2>
                         {contents.map((item) => (
                             <div
                                 key={item.category}
@@ -81,13 +87,13 @@ export const SidebarContent = (props: SidebarContentProps) => {
                                     event.stopPropagation();
                                     handleCategoryClick(item.category);
                                 }}
-                                className={`flex size-8 cursor-pointer items-center justify-center rounded-md ${selectedCategory === item.category
-                                    ? 'bg-indigo-600 text-white'
-                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                className={`flex cursor-pointer items-center justify-center rounded-md p-2 ${selectedCategory === item.category
+                                    ? 'bg-indigo-600 fill-white'
+                                    : 'bg-gray-200 fill-gray-600  hover:bg-gray-300'
                                     }`}
                                 title={item.category}
                             >
-                                {item.category.charAt(0)}
+                                {item.icon}
                             </div>
                         ))}
                     </div>
