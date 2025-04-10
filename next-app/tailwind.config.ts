@@ -12,11 +12,12 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-      fontFamily:{
+      fontFamily: {
         noto: ["Noto Sans JP", "sans-serif"],
       },
       animation: {
         "text-focus-in": "text-focus-in 2s infinite   both",
+        "fade-in": "fade-in 0.5s ease-in-out",
       },
       keyframes: {
         "text-focus-in": {
@@ -26,6 +27,14 @@ export default {
           },
           "50%": {
             filter: "blur(0)",
+            opacity: "1",
+          },
+        },
+        "fade-in": {
+          "0%": {
+            opacity: "0",
+          },
+          "100%": {
             opacity: "1",
           },
         },

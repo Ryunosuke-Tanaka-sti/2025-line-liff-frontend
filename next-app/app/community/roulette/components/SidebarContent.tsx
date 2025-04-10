@@ -41,7 +41,7 @@ export const SidebarContent = (props: SidebarContentProps) => {
 
     return (<>
         <div
-            className={`absolute left-0 hidden h-full overflow-x-hidden bg-white shadow-lg transition-all duration-300 ease-in-out md:block   ${isOpen ? 'w-64' : 'w-16'}`}
+            className={`absolute left-0 hidden h-full cursor-pointer overflow-x-hidden bg-white shadow-lg transition-all duration-300 ease-in-out md:block   ${isOpen ? 'w-64' : 'w-16'}`}
             onClick={toggleSidebar}
             ref={ref}
         >
@@ -76,7 +76,7 @@ export const SidebarContent = (props: SidebarContentProps) => {
                     </div>
                 ) : (
                     // Collapsed sidebar content (ribbon)
-                    <div className="flex flex-col items-center gap-6">
+                    <div className="flex animate-fade-in flex-col items-center gap-6 transition-opacity">
                         <h2 className="flex flex-row items-center gap-2 whitespace-nowrap text-xl font-bold text-gray-800">
                             <svg className="m-auto size-8" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g id="Layer_2" data-name="Layer 2"><path d="m4 9h24a3 3 0 0 0 0-6h-24a3 3 0 0 0 0 6zm0-4h24a1 1 0 0 1 0 2h-24a1 1 0 0 1 0-2z" /><path d="m28 13h-24a3 3 0 0 0 0 6h24a3 3 0 0 0 0-6zm0 4h-24a1 1 0 0 1 0-2h24a1 1 0 0 1 0 2z" /><path d="m28 23h-24a3 3 0 0 0 0 6h24a3 3 0 0 0 0-6zm0 4h-24a1 1 0 0 1 0-2h24a1 1 0 0 1 0 2z" /></g></svg>
                         </h2>
