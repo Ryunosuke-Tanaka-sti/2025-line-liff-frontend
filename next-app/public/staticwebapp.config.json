@@ -14,15 +14,15 @@
   "routes": [
     {
       "route": "/community/google/*",
-      "allowedRoles": [
-        "admin"
-      ]
+      "allowedRoles": ["admin"]
     },
     {
       "route": "/community/*",
-      "allowedRoles": [
-        "authenticated"
-      ]
+      "allowedRoles": ["authenticated"]
+    },
+    {
+      "route": "/api/slack/events",
+      "allowedRoles": []
     }
   ],
   "responseOverrides": {

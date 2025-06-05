@@ -11,6 +11,17 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+
+        main: "#2563EB", // ロイヤルブルー
+        sub: "#60A5FA", // スカイブルー
+        accent: "#8B5CF6", // パープル
+        "accent-alt": "#EC4899", // ピンク
+
+        "text-primary": "#1F2937", // ダークグレー
+        "text-secondary": "#4B5563", // ミディアムグレー
+
+        "bg-primary": "#F3F4F6", // ライトグレー
+        "bg-secondary": "#EFF6FF", // 薄い青色
       },
       fontFamily: {
         noto: ["Noto Sans JP", "sans-serif"],
