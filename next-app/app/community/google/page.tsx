@@ -1,31 +1,49 @@
-'use client'
+"use client";
 
 import { LoadingMainComponent } from "@/components/LoadingMainComponent";
 import { useGoogleOAuth } from "@/hooks/useGoogleOAuth";
 
+import { Button } from "./components/Button";
+import { FormComponent } from "./components/Form";
+
 export default function GooglePage() {
-    const { isLoading } = useGoogleOAuth()
-    if (isLoading) return <LoadingMainComponent />
+  const { isLoading } = useGoogleOAuth();
+  if (isLoading) return <LoadingMainComponent />;
 
-
-
-    const onClick = async () => {
-        const res = await fetch('/api/google-auth/test')
-        console.log(res)
+  const onClickRead = async (
+    action: "healthCheckFunction" | "getSheetAllData"
+  ) => {
+    const res = await fetch("/api/google-auth/test", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ functionName: action }),
+    });
+    if (res.status === 200) {
+      const data = await res.json();
+      console.log(data);
+    } else {
+      const data = await res.json();
+      alert(`Error: ${data.message}`);
     }
+  };
 
-    return (
-        <>
-            <main className="flex w-full flex-col gap-2">
-                <div className="flex max-w-xl flex-col gap-2 p-4">
-                    <a
-                        onClick={onClick}
-                        className="flex items-center justify-center rounded-lg bg-white px-8 py-2 shadow transition-all hover:-translate-x-1 hover:-translate-y-1 hover:cursor-pointer hover:shadow-md"
-                    >
-                        TEST Req
-                    </a>
-                </div>
-            </main>
-        </>
-    )
+  return (
+    <>
+      <main className="flex w-full flex-col gap-2">
+        <div className="flex max-w-xl flex-col gap-2 p-4">
+          <Button
+            label={"Hello World!"}
+            onClick={() => onClickRead("healthCheckFunction")}
+          />
+          <Button
+            label={"Get Sheet All Data"}
+            onClick={() => onClickRead("getSheetAllData")}
+          />
+          <FormComponent />
+        </div>
+      </main>
+    </>
+  );
 }
